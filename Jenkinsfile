@@ -2,13 +2,10 @@ pipeline {
     agent any
     parameters {
         string(name: 'NAME', description: 'Please tell me your name?')
- 
-        text(name: 'DESC', description: 'Describe about the job details')
- 
+        string(address: 'Address', description: 'Enter your residence address')
+        text(name: 'DESC', description: 'Describe about the job details') 
         booleanParam(name: 'SKIP_TEST', description: 'Want to skip running Test cases?')
- 
         choice(name: 'BRANCH', choices: ['Master', 'Dev'], description: 'Choose branch')
- 
         password(name: 'SONAR_SERVER_PWD', description: 'Enter App password')
     }
     stages {
